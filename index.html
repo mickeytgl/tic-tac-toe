@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+	<div id="app">
+		<div id="welcome" v-if='!started'>
+			<div class="titleBlock">
+				<h1>Tic<span>Tac</span>Toe</h1>
+				<div class="row mode" @click='init()'>
+					<p>Start the Game!!</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="main" v-if='started && !game.over'>
+			<table id='board'>
+				<tr v-for='row in board'>
+					<td v-for='box in row'>
+						<div class="square" @click='router(box)' :class='{"square active": box.bg}'>
+							{{box.val}}
+						</div>
+					</td>
+				</tr>
+			</table>		
+		</div><!-- Main -->
+
+		<div id="reset" v-if='started && game.over'>
+			<div class="titleBlock">
+				<h1 v-if='!game.draw'>Player {{game.winner}} wins!</h1>
+				<h1 v-if='game.draw'>That's a draw, folks!</h1>
+
+				<h2>Play again?</h2>
+				<div class="row mode" @click='init()'>
+					Hell yeah!!
+				</div>
+			</div>
+		</div> <!-- Reset Screen -->
+	</div> <!-- APP div -->
+
+	<script src="script.js"></script>
+</body>
+</html>

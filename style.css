@@ -1,0 +1,78 @@
+@import "https://fonts.googleapis.com/css?family=Oswald";
+
+.center, .titleBlock, #board {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+span {
+	color: #284292;
+}
+
+.select_marker {
+	cursor: pointer;
+}
+
+#welcome {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.titleBlock {
+	color: blue;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.titleBlock h1 {
+	font-size: 100px;
+	width: 100%;
+}
+
+.titleBlock .mode {
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#board {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.square {
+	width: 15vw;
+	height: 15vw;
+	background: #6C7A89;
+	cursor: pointer;
+	font-size: 15vw;
+	line-height: 15vw;
+	text-align: center;
+	color: white;
+}
+
+.square:hover {
+	opacity: .8;
+}
+
+.square.active {
+	background: #00B16A;
+}
+
+#reset {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #6C7A89;
+}
